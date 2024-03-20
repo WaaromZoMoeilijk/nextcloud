@@ -54,7 +54,7 @@
     force: true
   with_items:
     - { file: '{{ ansible_distribution }}/cli.php.ini',  dest: '{{ php_cli_conf_dir[ansible_distribution] }}/php.ini' }
-  notify: restart php{{ php_version }}-fpm
+  notify: restart php-fpm
 
 - name: configure php postgres module
   copy:
@@ -74,7 +74,7 @@
     group: root
     mode: 0644
   when: nc_db_type == 'pgsql'
-  notify: restart php{{ php_version }}-fpm
+  notify: restart php-fpm
 
 - name: configure php mysql module
   copy:
@@ -100,5 +100,5 @@
     group: root
     mode: 0644
   when: nc_db_type == 'mysql'
-  notify: restart php{{ php_version }}-fpm
+  notify: restart php-fpm
 
