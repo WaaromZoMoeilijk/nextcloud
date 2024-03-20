@@ -33,9 +33,9 @@
 
 - name: ensure postgres is running
   systemd:
-    name:    postgresql
+    name: postgresql
     enabled: true
-    state:   started
+    state: started
   register: postgresql_start
 
 - name: Wait for PostgreSQL to start if it wasnt
