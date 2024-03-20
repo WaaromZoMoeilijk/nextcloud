@@ -14,7 +14,7 @@
     name:
       - apt-transport-https
       - ca-certificates
-      - python-pip
+      - python3-pip
       - software-properties-common
     state: latest
 
