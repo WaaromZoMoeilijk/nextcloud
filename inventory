@@ -58,7 +58,7 @@ nc_mail_smtpname     =
 nc_mail_smtppwd      =
 
 # php Version
-php_version          = '7.3'
+php_version          = '8.2'
 
 # Install turn server for Nextcloud Talk
 # currently broken for https://help.nextcloud.com/t/cannot-install-talk-on-fresh-nextcloud-18-install/68613
@@ -70,7 +70,7 @@ next_archive         = https://download.nextcloud.com/server/releases/latest.tar
 # Install restic backup tool if backup_folder is not empty
 # more info about restic: https://restic.readthedocs.io/en/latest/
 # to use a local directory as a restic repository (not a good idea anyway)
-restic_repo          = ''   # e.g. '/var/backups/nextcloud'
+restic_repo          = '/var/ncbackup'   # e.g. '/var/backups/nextcloud'
 
 # use rclone to backup a cloud storage, see https://rclone.org for more details
 # configure also rclone_remote in group_vars/all.yml
@@ -87,7 +87,7 @@ install_collabora     = false
 
 # Install Online Office
 # more info about onlyoffice office: https://www.onlyoffice.com
-install_onlyoffice    = false
+install_onlyoffice    = true
 onlyoffice_ssl_port   = 8443
 
 # Install ufw
