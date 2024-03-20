@@ -32,15 +32,15 @@
       - php{{ php_version }}-zip
       - php{{ php_version }}-intl
       - php{{ php_version }}-mbstring
-      - php{{ php_version }}-json
+      - php{{ php_version }}-cli
       - php{{ php_version }}-bz2
       - php{{ php_version }}-ldap
       - php{{ php_version }}-bcmath  
       - php{{ php_version }}-gmp
-      - php-apcu
-      - php-imagick
-      - php-smbclient
-      - php-redis
+      - php{{ php_version }}-apcu
+      - php{{ php_version }}-imagick
+      - php{{ php_version }}-smbclient
+      - php{{ php_version }}-redis
     autoremove: true
     state: latest
 
@@ -54,7 +54,7 @@
     force: true
   with_items:
     - { file: '{{ ansible_distribution }}/cli.php.ini',  dest: '{{ php_cli_conf_dir[ansible_distribution] }}/php.ini' }
-  notify: restart php-fpm
+  notify: restart php{{ php_version }}-fpm
 
 - name: configure php postgres module
   copy:
@@ -74,7 +74,7 @@
     group: root
     mode: 0644
   when: nc_db_type == 'pgsql'
-  notify: restart php-fpm
+  notify: restart php{{ php_version }}-fpm
 
 - name: configure php mysql module
   copy:
@@ -100,5 +100,5 @@
     group: root
     mode: 0644
   when: nc_db_type == 'mysql'
-  notify: restart php-fpm
+  notify: restart php{{ php_version }}-fpm
 
