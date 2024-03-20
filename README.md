@@ -5,7 +5,7 @@ Ansible Playbook to install
 
 * Nextcloud (Latest) - <https://nextcloud.com/>
 * nginx 1.17 - <https://nginx.org/>
-* PHP 7.x - <http://www.php.net/>
+* PHP 8.2 - <http://www.php.net/>
 * MariaDB 10 - <https://mariadb.org/> or PostgreSQL 10 <https://www.postgresql.org/>
 * redis - <https://redis.io/>
 * restic backup - <https://restic.readthedocs.io>
